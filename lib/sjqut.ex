@@ -1,18 +1,20 @@
 defmodule Sjqut do
   @moduledoc """
-  Documentation for Sjqut.
+    Documenation for Sjqut
   """
+  use Application
+  require Logger
 
   @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Sjqut.hello
-      :world
-
+    Start a process to run AppRoutes
   """
-  def hello do
-    :world
+  def start(_type, _args) do
+    children = [
+      Plug.Adapters.Cowboy.child_spec(:http, Sjqut.AppRoutes, [])
+    ]
+
+    Logger.info "Started application"
+
+    Supervisor.start_link(children, strategy: :one_for_one)
   end
 end
