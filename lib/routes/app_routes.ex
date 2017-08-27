@@ -4,7 +4,7 @@ defmodule Sjqut.AppRoutes do
   plug :match
   plug :dispatch
 
-  get "/hello" do
-    send_resp(conn, 200, "Hello world")
+  get "/about" do
+    send_resp(conn, 200, "A side-project made by Vincent Nguyen - vinhnglx")
   end
 end
