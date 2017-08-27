@@ -1,0 +1,8 @@
+use Mix.Config
+
+config :sjqut, Sjqut.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "username",
+  password: "password",
+  database: "sjqut_dev",
+  pool_size: 20
