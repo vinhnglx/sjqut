@@ -9,6 +9,14 @@ defmodule Sjqut.Web do
     end
   end
 
+  def controller do
+    quote do
+      alias Sjqut.Repo
+      import Ecto
+      import Ecto.Query
+    end
+  end
+
   @doc """
   When used, dispatch to the appropriate controller/view/etc.
   """
