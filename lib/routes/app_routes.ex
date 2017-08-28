@@ -5,6 +5,10 @@ defmodule Sjqut.AppRoutes do
   plug Plug.Static, at: "/", from: "lib/static", gzip: false, only: ~w(favicon.ico)
 
   plug :match
+
+  # https://hexdocs.pm/plug/Plug.Parsers.html#module-built-in-parsers
+  plug Plug.Parsers, parsers: [:urlencoded, :multipart]
+
   plug :dispatch
 
   get "/about" do
@@ -17,6 +21,10 @@ defmodule Sjqut.AppRoutes do
 
   get "/quote/new" do
     Sjqut.QuoteController.new(conn)
+  end
+
+  post "/quote" do
+    Sjqut.QuoteController.create(conn)
   end
 
   match _ do
