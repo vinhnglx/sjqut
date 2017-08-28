@@ -7,4 +7,10 @@ defmodule Sjqut.Quote do
 
     timestamps()
   end
+
+  def changeset(model, params \\ %{}) do
+    model
+    |> cast(params, [:film_title, :content])
+    |> validate_required([:film_title, :content])
+  end
 end
