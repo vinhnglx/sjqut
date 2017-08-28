@@ -9,8 +9,11 @@ defmodule Sjqut do
     Start a process to run AppRoutes
   """
   def start(_type, _args) do
+    import Supervisor.Spec
+
     children = [
-      Plug.Adapters.Cowboy.child_spec(:http, Sjqut.AppRoutes, [])
+      Plug.Adapters.Cowboy.child_spec(:http, Sjqut.AppRoutes, []),
+      supervisor(Sjqut.Repo, [])
     ]
 
     Logger.info "Started application"
