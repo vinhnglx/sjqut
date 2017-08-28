@@ -15,6 +15,10 @@ defmodule Sjqut.AppRoutes do
     Sjqut.QuoteController.index(conn)
   end
 
+  get "/quote/new" do
+    Sjqut.QuoteController.new(conn)
+  end
+
   match _ do
     send_resp(conn, 200, "A side-project made by Vincent Nguyen - vinhnglx")
   end
