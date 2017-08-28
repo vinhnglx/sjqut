@@ -13,9 +13,9 @@
           <div class="col-md-8 col-md-offset-2 col-sm-12">
             <div class="panel panel-default">
               <div class="panel-body">
-                <form accept-charset="UTF-8" action="/users/vinhnglx/quotes" method="post">
+                <form accept-charset="UTF-8" action="/quote" method="post">
                   <div class="form-group">
-                    <input class="form-control" id="quote_title" name="quote[title]" placeholder="Title" type="text">
+                    <input class="form-control" id="quote_title" name="quote[film_title]" placeholder="Title" type="text">
                   </div>
                   <div class="form-group">
                     <textarea class="form-control" id="quote_content" name="quote[content]" placeholder="Content"></textarea>
