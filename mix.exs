@@ -35,7 +35,8 @@ defmodule Sjqut.Mixfile do
       {:cowboy, "~> 1.0.0"},
       {:plug, "~> 1.4"},
       {:postgrex, ">= 0.0.0"},
-      {:ecto, "~> 2.1"}
+      {:ecto, "~> 2.1"},
+      {:env_helper, "~> 0.0.1"}
     ]
   end
 end
