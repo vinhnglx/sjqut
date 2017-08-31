@@ -5,15 +5,15 @@ defmodule Sjqut.QuoteController do
   alias Sjqut.Quote
 
   def index(conn) do
-    page_contents = EEx.eval_file("lib/templates/quote/index.eex")
+    quotes = Repo.all(Quote)
+    page_contents = EEx.eval_file("lib/templates/quote/index.eex", [quotes: quotes])
     conn
     |> put_resp_content_type("text/html")
     |> send_resp(200, page_contents)
   end
 
   def new(conn) do
-    changeset = Quote.changeset(%Quote{})
-    page_contents = EEx.eval_file("lib/templates/quote/new.eex", [changeset: changeset])
+    page_contents = EEx.eval_file("lib/templates/quote/new.eex")
     conn
     |> put_resp_content_type("text/html")
     |> send_resp(200, page_contents)

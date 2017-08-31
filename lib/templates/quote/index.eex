@@ -7,7 +7,31 @@
   </head>
 
   <body>
-    <h2>Hello</h2>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-sm-12">
+            <h2>Zeus! You Got A Problem With That?</h2>
+            <br/>
+            <%= for quote <- quotes do %>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <p class="panel-title">
+                    <%= quote.film_title %>
+                  </p>
+                </div>
+
+                <div class="panel-body">
+                  <blockquote>
+                    <p><%= quote.content %></p>
+                  </blockquote>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
